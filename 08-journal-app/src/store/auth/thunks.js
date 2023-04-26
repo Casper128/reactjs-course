@@ -1,4 +1,4 @@
-import { singInWithGoogle, registerUserWithEmailPassword, loginWithEmailPassword } from "../../firebase/providers";
+import { singInWithGoogle, registerUserWithEmailPassword, loginWithEmailPassword, logoutFirebase } from "../../firebase/providers";
 import { checkingCredentials, login, logout } from "./authSlice";
 
 // en los thunks es donde se deben hacer los dispacht
@@ -34,4 +34,11 @@ export const startLoginWithEmailPassword = ({ email, password }) => {
         if (!result.ok) return dispatch(logout({ errorMessage }));
         dispatch(login(result))
     }
+}
+
+export const startLogout = ()=>{
+    return  (async (dispatch)=>{
+        await logoutFirebase();
+        dispatch(logout())
+    })
 }

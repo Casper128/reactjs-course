@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { login, logout } from "../store/auth";
 import { FirebaseAuth } from "../firebase/config";
+import { staertLoadingNotes } from "../store/journal";
 
 export const useCheckOut = () => {
     const { status } = useSelector(state => state.auth);
@@ -12,7 +13,8 @@ export const useCheckOut = () => {
         onAuthStateChanged(FirebaseAuth, async (user) => {
             if (!user) return dispatch(logout())
             const { uid, email, displayName, photoURL } = user
-            dispatch(login({ uid, email, displayName, photoURL }))
+            dispatch(login({ uid, email, displayName, photoURL }));
+            dispatch(staertLoadingNotes())
         })
     }, [])
     return {

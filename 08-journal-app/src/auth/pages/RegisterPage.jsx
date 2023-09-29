@@ -22,7 +22,6 @@ export const RegisterPage = () => {
 
   const dispatch = useDispatch();
   const [formSubmitted, setFormSubmitted] = useState(false)
-
   const { status, errorMessage } = useSelector(state => state.auth);
   const isCheckingAuthentication = useMemo(() => status === 'checking', [status])
   const {
@@ -35,7 +34,6 @@ export const RegisterPage = () => {
     displayNameValid,
     emailValid,
     passwordValid,
-
   } = useForm(formData, formValidations)
   const onSubmit = (e) => {
     e.preventDefault();

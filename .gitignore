@@ -1,0 +1,55 @@
+# Node modules
+**/node_modules/
+node_modules/
+
+# Build output directories
+dist/
+build/
+dist-ssr/
+
+# Logs
+**/logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Environment variables
+**/.env
+**/.env.*
+**/.env.**
+
+# Databases
+mongo/
+mongo-test/
+postgres/
+postgres-test/
+
+# Custom outputs
+custom-outputs/
+test-destination/
+
+# Coverage reports
+coverage/
+
+# Keys and sensitive files
+keys/
+
+# Local Netlify folder
+.netlify
+
+# Package lock file
+package-lock.json
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
